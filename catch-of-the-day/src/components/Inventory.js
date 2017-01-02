@@ -30,6 +30,7 @@ class Inventory extends React.Component{
         </select>
         <textarea name='desc'value={fish.desc} onChange={(e) => this.handleChange(e,key)} placeholder='Fish Desc'></textarea>
         <input name='image'value={fish.image}type="text" onChange={(e) => this.handleChange(e,key)} placeholder='Fish Image'/>
+        <button onClick={() => this.props.removeFish(key)}>Remove Fish</button>
       </div>
 
   )}
@@ -45,5 +46,11 @@ class Inventory extends React.Component{
      )
   }
 }
+Inventory.propTypes = {
+  removeFish: React.PropTypes.func.isRequired,
+  updateFish: React.PropTypes.func.isRequired,
+  loadSamples: React.PropTypes.func.isRequired,
+  fishes: React.PropTypes.object,
 
+}
 export default Inventory;
